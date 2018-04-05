@@ -150,4 +150,14 @@ public:
      * @return True if log_bin is on
      */
     bool check_replication_settings(print_repl_warnings_t print_warnings = WARNINGS_ON);
+
+    /**
+     * Wait until slave replication catches up with the master gtid.
+     *
+     * @param target Which gtid must be reached
+     * @param timeout Maximum wait time in seconds
+     * @param err_out json object for error printing. Can be NULL.
+     * @return True, if target gtid was reached within allotted time
+     */
+    bool wait_until_gtid(const GtidList& gtid, int total_timeout, json_t** err_out);
 };
