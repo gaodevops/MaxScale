@@ -1401,7 +1401,7 @@ bool session_delay_routing(MXS_SESSION* session, MXS_DOWNSTREAM down, GWBUF* buf
         if (seconds == 0)
         {
             // No actual delay, just re-route query
-            worker->post(task);
+            worker->post(task, Worker::EXECUTE_QUEUED);
         }
         else
         {
