@@ -602,6 +602,9 @@ add_test_executable(mxs1503_queued_sescmd.cpp mxs1503_queued_sescmd mxs1503_mast
 # Check that no extra slaves are taken into use
 add_test_executable(mxs1503_extra_slaves.cpp mxs1503_extra_slaves mxs1503_extra_slaves LABELS readwritesplit REPL_BACKEND)
 
+# Master reconnection and MariaDBMon interaction
+add_test_executable(mxs1503_switchover.cpp mxs1503_switchover mxs1503_switchover LABELS readwritesplit REPL_BACKEND)
+
 # MXS-1506: Delayed query retry
 # https://jira.mariadb.org/browse/MXS-1506
 add_test_executable(mxs1506_delayed_retry.cpp mxs1506_delayed_retry mxs1506_delayed_retry LABELS readwritesplit REPL_BACKEND)
