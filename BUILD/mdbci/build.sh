@@ -21,6 +21,9 @@ set -x
 
 # read the name of build scripts directory
 export script_dir="$(dirname $(readlink -f $0))"
+if [ ${source_build_sh} == "yes" ] ; then
+  export script_dir=${script_dir}/../../BUILD/mdbci/
+fi
 
 # load all needed variables
 . ${script_dir}/set_build_variables.sh
