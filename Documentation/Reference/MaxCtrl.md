@@ -39,7 +39,9 @@ All command accept the following global options.
 
 ```
   -u, --user      Username to use                    [string] [default: "admin"]
-  -p, --password  Password for the user            [string] [default: "mariadb"]
+  -p, --password  Password for the user. To input the password manually, give -p
+                  as the last argument or use --password=''
+                                                   [string] [default: "mariadb"]
   -h, --hosts     List of MaxScale hosts. The hosts must be in HOST:PORT format
                   and each value must be separated by a comma.
                                             [string] [default: "localhost:8989"]
@@ -145,6 +147,7 @@ Commands:
   filter <filter>    Show filter
   module <module>    Show loaded module
   maxscale           Show MaxScale information
+  threads            Show worker thread information
   logging            Show MaxScale logging information
   commands <module>  Show module commands of a module
 
@@ -200,6 +203,10 @@ information of a loaded module.
 `Usage: show maxscale`
 
 See `help alter maxscale` for more details about altering MaxScale parameters.
+
+### show threads
+
+`Usage: show threads`
 
 ### show logging
 
